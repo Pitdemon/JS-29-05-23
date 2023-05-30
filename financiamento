@@ -1,0 +1,55 @@
+//Exercício de revisão:
+
+
+
+//Financiamento de Emprestimo:
+
+
+
+//Entradas:
+let qtParcelas, valorFinanciado;
+
+valorFinanciado = Number(prompt("Digite o valor que deseja finaciar"));
+qtParcelas = Number(prompt("Digite a quantidade de parcelas que deseja financiar"));
+
+//Saida:
+let valorParcela, totalApagar, juros;
+
+//*******************************Opção de financiamneto sem juros:
+
+//Calculo do valorParcela
+valorParcela = valorFinanciado / qtParcelas;
+
+juros = valorParcela / 100; //ou valorParcela * 1.01;
+valorParcela = valorParcela + juros;
+
+/* valorParcela = valorParcela + (valorParcela / 100);
+valorParcela = valorParcela + ( 1 +( 1 / 100));
+valorParcela = valorParcela * 1.01;*/
+
+//Calculo total a pagar:
+
+totalApagar = valorParcela * qtParcelas;
+
+//saidas:
+
+console.log(`O valor da parcela é ${valorParcela}.
+O total a pagar no final do finaciamento será de: R$${totalApagar}.
+`);
+
+
+//********************************Opção de financiamento com 1% ao mês:
+
+
+//Calculo do valorParcela
+valorParcela = valorFinanciado / qtParcelas;
+
+//Calculo total a pagar:
+
+totalApagar = valorParcela * qtParcelas;
+
+//saidas:
+
+console.log(`Para o finaciamento com juros seimples de 1% ao mês: ${valorParcela}.
+O valor da parcela é R$${totalApagar}.
+O total a pagar ao final do finaciamento é `);

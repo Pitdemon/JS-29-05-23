@@ -1,0 +1,44 @@
+
+var tabuleiro = ['_', '_', '_', '_', '_', '_', '_', '_', '_']
+var jogada = 0, posicao, ind; //ind = indice do tabuleiro
+var linhaA, linhaB, linhaC, colunaD, colunaE, colunaF, diagonalG, diagonalH
+
+while (jogada <= 9) {
+  alert(`
+  ${tabuleiro[0]}|${tabuleiro[1]}|${tabuleiro[2]}
+  ${tabuleiro[3]}|${tabuleiro[4]}|${tabuleiro[5]}
+  ${tabuleiro[6]}|${tabuleiro[7]}|${tabuleiro[8]}`)
+
+  //verificar se X e o vencedor
+  linhaA = (tabuleiro[0] === 'X') && (tabuleiro[1] === 'X') && (tabuleiro[2] === 'X')
+
+
+  //Jogada do X
+  //Repete a jogada se a jogada é inválida:
+  while (true) {
+    posicao = Number(prompt("Jogada do X(Digite uma posição de 0 a 8):"))
+
+    if (posicao >= 0 && posicao <= 8 && tabuleiro[posicao] === '_') {
+      tabuleiro[posicao] = 'X'
+      jogada++
+      break
+    }
+  }
+  alert(`
+ ${tabuleiro[0]}|${tabuleiro[1]}|${tabuleiro[2]}
+ ${tabuleiro[3]}|${tabuleiro[4]}|${tabuleiro[5]}
+ ${tabuleiro[6]}|${tabuleiro[7]}|${tabuleiro[8]}`)
+
+  if (jogada <= 8) {
+    //Jogada do O
+    //Repete a jogada se a jogada é inválida
+    while (true) {
+      posicao = Number(prompt("Jogada do O(Digite uma posição de 0 a 8):"))
+      if (posicao >= 0 && posicao <= 8 && tabuleiro[posicao] === '_') {
+        tabuleiro[posicao] = 'O'
+        jogada++
+        break
+      }
+    }
+  }
+}
